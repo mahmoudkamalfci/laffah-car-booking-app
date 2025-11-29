@@ -16,7 +16,7 @@ import {
 const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/about", label: "عن لفّة" },
-  { href: "/rent", label: "احجز سيارتك" },
+  { href: "/cars", label: "احجز سيارتك" },
   { href: "/join", label: "انضم معنا" },
 ];
 

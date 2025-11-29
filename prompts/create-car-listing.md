@@ -1,0 +1,3 @@
+I want to create a car listing page named cars it should be here app/cars/page.tsx.
+the page should be match the design screenshot exist in prompts/car-listing.png.
+the page should be responsive. after header and subheader it consists of two main parts the first part is the filters sidebar make sure to create it as a component and use shadcn ui components if not exist try to install missing components using pnpm like this (pnpm dlx shadcn@latest add select) . the second part is a list of fleet-card.tsx components make sure to use demo data to test it.
