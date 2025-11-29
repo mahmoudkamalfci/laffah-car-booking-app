@@ -13,39 +13,41 @@ import {
 
 export function FiltersSidebar() {
   return (
-    <Card className="w-full h-fit sticky top-4 border-gray-100 shadow-sm">
-      <CardHeader className="pb-4">
+    <Card className="w-full h-fit sticky top-4 border border-border shadow-sm rounded-3xl py-8 gap-4">
+      <CardHeader className="px-8">
         <div className="flex items-center justify-between">
+          <CardTitle className="text-2xl font-medium text-primary">
+            الفلاتر
+          </CardTitle>
           <Button
             variant="ghost"
             size="sm"
-            className="text-red-500 hover:text-red-600 hover:bg-red-50 px-0"
+            className="text-red-500 hover:text-red-600 hover:bg-red-50 px-2"
           >
             مسح الكل
           </Button>
-          <CardTitle className="text-xl font-bold text-[#1e3a5f]">
-            الفلاتر
-          </CardTitle>
         </div>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-4 px-8">
         {/* Search */}
-        <div className="space-y-2 text-right">
-          <label className="text-sm font-bold text-[#1e3a5f]">بحث</label>
+        <div className="space-y-2">
+          <label className="block text-base font-medium text-primary">
+            بحث
+          </label>
           <Input
             placeholder="ابحث عن سيارة...."
-            className="text-right bg-[#F8FAFC] border-none h-12 rounded-xl"
+            className="bg-[#F8FAFC] border border-border h-10 rounded-md"
           />
         </div>
 
         {/* Pickup Location */}
-        <div className="space-y-2 text-right">
-          <label className="text-sm font-bold text-[#1e3a5f]">
+        <div className="space-y-2">
+          <label className="block text-base font-medium text-primary">
             مكان الاستلام
           </label>
           <Select>
             <SelectTrigger
-              className="w-full text-right bg-[#F8FAFC] border-none h-12 rounded-xl flex-row-reverse"
+              className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md"
               dir="rtl"
             >
               <SelectValue placeholder="مطار القاهرة الدولي" />
@@ -60,13 +62,13 @@ export function FiltersSidebar() {
         </div>
 
         {/* Car Brand (Type) */}
-        <div className="space-y-2 text-right">
-          <label className="text-sm font-bold text-[#1e3a5f]">
+        <div className="space-y-2">
+          <label className="block text-base font-medium text-primary">
             نوع العربية
           </label>
           <Select>
             <SelectTrigger
-              className="w-full text-right bg-[#F8FAFC] border-none h-12 rounded-xl flex-row-reverse"
+              className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md"
               dir="rtl"
             >
               <SelectValue placeholder="كيا سبورتاج" />
@@ -82,13 +84,13 @@ export function FiltersSidebar() {
         </div>
 
         {/* Car Body Shape */}
-        <div className="space-y-2 text-right">
-          <label className="text-sm font-bold text-[#1e3a5f]">
+        <div className="space-y-2">
+          <label className="block text-base font-medium text-primary">
             شكل العربية
           </label>
           <Select>
             <SelectTrigger
-              className="w-full text-right bg-[#F8FAFC] border-none h-12 rounded-xl flex-row-reverse"
+              className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md"
               dir="rtl"
             >
               <SelectValue placeholder="سيدان" />
@@ -103,11 +105,13 @@ export function FiltersSidebar() {
         </div>
 
         {/* Sort By */}
-        <div className="space-y-2 text-right">
-          <label className="text-sm font-bold text-[#1e3a5f]">ترتيب حسب</label>
+        <div className="space-y-2">
+          <label className="block text-base font-medium text-primary">
+            ترتيب حسب
+          </label>
           <Select>
             <SelectTrigger
-              className="w-full text-right bg-[#F8FAFC] border-none h-12 rounded-xl flex-row-reverse"
+              className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md"
               dir="rtl"
             >
               <SelectValue placeholder="الأعلي تقييماً" />

@@ -102,7 +102,7 @@ function CardInfo({ car }: { car: CarListing }) {
           {/* Car Type */}
           <div className="flex items-center gap-4">
             <div className="bg-white p-2 rounded-full shadow-sm">
-              <Car className="w-5 h-5 text-[#1e3a5f]" />
+              <Car className="w-5 h-5 text-primary" />
             </div>
             <div className="text-right">
               <p className="text-gray-500 text-xs mb-1">نوع السيارة</p>
@@ -115,7 +115,7 @@ function CardInfo({ car }: { car: CarListing }) {
           {/* City */}
           <div className="flex items-center gap-4">
             <div className="bg-white p-2 rounded-full shadow-sm">
-              <MapPin className="w-5 h-5 text-[#1e3a5f]" />
+              <MapPin className="w-5 h-5 text-primary" />
             </div>
             <div className="text-right">
               <p className="text-gray-500 text-xs mb-1">المدينة</p>
@@ -126,7 +126,7 @@ function CardInfo({ car }: { car: CarListing }) {
           {/* Response Time */}
           <div className="flex items-center gap-4">
             <div className="bg-white p-2 rounded-full shadow-sm">
-              <Clock className="w-5 h-5 text-[#1e3a5f]" />
+              <Clock className="w-5 h-5 text-primary" />
             </div>
             <div className="text-right">
               <p className="text-gray-500 text-xs mb-1">وقت الاستجابة</p>
@@ -147,16 +147,16 @@ function CardInfo({ car }: { car: CarListing }) {
             {car.tags?.map((tag) => (
               <span
                 key={tag}
-                className="bg-[#F8FAFC] text-primary px-4 py-1.5 rounded-full text-sm font-medium shadow-sm"
+                className="bg-[#F8FAFC] text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm"
               >
                 {tag}
               </span>
             )) || (
               <>
-                <span className="bg-[#F8FAFC] text-primary px-4 py-1.5 rounded-full text-sm font-medium shadow-sm">
+                <span className="bg-[#F8FAFC] text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
                   رحلات سياحية
                 </span>
-                <span className="bg-[#F8FAFC] text-primary px-4 py-1.5 rounded-full text-sm font-medium shadow-sm">
+                <span className="bg-[#F8FAFC] text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
                   مطار
                 </span>
               </>
@@ -170,8 +170,8 @@ function CardInfo({ car }: { car: CarListing }) {
 
 function PriceCard({ car }: { car: CarListing }) {
   return (
-    <div className="bg-card-custom-background p-6 w-full lg:w-auto">
-      <Card className="border border-border card-custom-shadow rounded-[14px] py-0 overflow-hidden mb-6">
+    <div className="h-full bg-card-custom-background p-6 w-full lg:w-auto">
+      <Card className=" border border-border card-custom-shadow rounded-[14px] py-0 overflow-hidden mb-6">
         <CardContent className="p-4">
           <div className="text-center">
             <p className="text-4xl font-bold">

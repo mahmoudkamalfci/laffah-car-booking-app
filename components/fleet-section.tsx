@@ -65,7 +65,7 @@ export default function FleetSection() {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-4xl font-bold text-[#1e3a5f] mb-4">
+          <h2 className="text-5xl md:text-4xl font-bold text-primary mb-4">
             أسطول لَفّة في انتظارك
           </h2>
           <p className="text-gray-500">

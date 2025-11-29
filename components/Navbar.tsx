@@ -12,6 +12,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import AuthDialog from "@/components/auth-dialog";
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
@@ -22,6 +23,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAuthDialogOpen, setIsAuthDialogOpen] = useState(false);
 
   return (
     <nav className="w-full bg-transparent shadow-(--shadow-navbar)">
@@ -49,7 +51,10 @@ export default function Navbar() {
 
           {/* Auth Button - Desktop */}
           <div className="hidden md:block">
-            <Button className="border-primary text-white bg-primary hover:bg-primary/80 hover:text-white rounded py-2 px-6">
+            <Button
+              onClick={() => setIsAuthDialogOpen(true)}
+              className="border-primary text-white bg-primary hover:bg-primary/80 hover:text-white rounded py-2 px-6"
+            >
               تسجيل الدخول / إنشاء حساب
             </Button>
           </div>
@@ -79,7 +84,13 @@ export default function Navbar() {
                       {link.label}
                     </Link>
                   ))}
-                  <Button className="mt-4 rounded-full border-primary text-primary bg-transparent hover:bg-primary hover:text-white">
+                  <Button
+                    onClick={() => {
+                      setIsOpen(false);
+                      setIsAuthDialogOpen(true);
+                    }}
+                    className="mt-4 rounded-full border-primary text-primary bg-transparent hover:bg-primary hover:text-white"
+                  >
                     تسجيل الدخول / إنشاء حساب
                   </Button>
                 </div>
@@ -88,6 +99,9 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Auth Dialog */}
+      <AuthDialog open={isAuthDialogOpen} onOpenChange={setIsAuthDialogOpen} />
     </nav>
   );
 }

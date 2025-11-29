@@ -6,11 +6,7 @@ import { FleetCard, CarListing } from "@/components/fleet-card";
 const DEMO_CARS: CarListing[] = [
   {
     id: 1,
-    images: [
-      "/car.png",
-      "/car.png",
-      "/car.png",
-    ],
+    images: ["/car.png", "/car.png", "/car.png"],
     carName: "مرسيدس بنز C-Class",
     year: 2023,
     city: "القاهرة",
@@ -27,10 +23,7 @@ const DEMO_CARS: CarListing[] = [
   },
   {
     id: 2,
-    images: [
-      "/car.png",
-      "/car.png",
-    ],
+    images: ["/car.png", "/car.png"],
     carName: "تويوتا كورولا",
     year: 2022,
     city: "الجيزة",
@@ -46,9 +39,7 @@ const DEMO_CARS: CarListing[] = [
   },
   {
     id: 3,
-    images: [
-      "/car.png",
-    ],
+    images: ["/car.png"],
     carName: "هيونداي توسان",
     year: 2024,
     city: "الإسكندرية",
@@ -64,10 +55,7 @@ const DEMO_CARS: CarListing[] = [
   },
   {
     id: 4,
-    images: [
-      "/car.png",
-      "/car.png",
-    ],
+    images: ["/car.png", "/car.png"],
     carName: "كيا سبورتاج",
     year: 2023,
     city: "القاهرة",
@@ -84,16 +72,14 @@ const DEMO_CARS: CarListing[] = [
 
 export default function CarsPage() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-12">
+    <div className="min-h-screen bg-gray-50 pb-16">
       {/* Header Section */}
-      <div className="bg-primary text-white py-12 mb-8">
+      <div className="py-8">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">
             اختر سيارتك المفضلة
           </h1>
-          <p className="text-gray-200 text-lg max-w-2xl">
-            تصفح أسطولنا المتميز من السيارات واختر ما يناسب احتياجاتك. نوفر لك تجربة تأجير سلسة وآمنة.
-          </p>
+          <p className="text-xl text-gray-500">2 سيارة متاحة </p>
         </div>
       </div>
 
@@ -107,10 +93,13 @@ export default function CarsPage() {
           {/* Main Content */}
           <main className="w-full lg:w-3/4">
             <div className="flex items-center justify-between mb-6">
-              <p className="text-gray-600">
-                تم العثور على <span className="font-bold text-primary">{DEMO_CARS.length}</span> سيارة
+              <p className="text-gray-500">
+                تم العثور على
+                <span className="font-bold text-primary">
+                  {DEMO_CARS.length}
+                </span>
+                سيارة
               </p>
-              {/* Mobile Filter Toggle could go here */}
             </div>
 
             <div className="space-y-6">

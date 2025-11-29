@@ -47,11 +47,11 @@ const features = [
 
 export default function JoinPage() {
   return (
-    <div className="min-h-screen bg-[#F8FAFC] py-12 px-4 md:px-8" dir="rtl">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-[#F8FAFC]">
+      <div className="container mx-auto px-4">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <div className="py-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">
             انضم لفريق لفه
           </h1>
           <p className="text-gray-500 text-lg md:text-xl">
@@ -60,66 +60,65 @@ export default function JoinPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Form Section - Right Side (First in RTL) */}
           <div className="lg:col-span-7">
-            <Card className="w-full bg-white shadow-sm border-none p-6">
+            <Card className="w-full bg-white shadow-sm border border-border p-6 gap-4">
               <CardHeader className="px-0 pt-0">
-                <CardTitle className="text-2xl font-bold text-primary text-right">
+                <CardTitle className="text-2xl font-bold text-primary ">
                   البيانات الشخصية
                 </CardTitle>
-                <CardDescription className="text-gray-500 text-right text-base">
+                <CardDescription className="text-gray-500  text-base">
                   كن جزءاً من أكبر شبكة لتأجير السيارات مع السائقين في مصر
                 </CardDescription>
               </CardHeader>
-              <CardContent className="px-0 space-y-6">
+              <CardContent className="px-0 space-y-4">
                 <div className="space-y-2">
                   <label
                     htmlFor="fullName"
-                    className="text-sm font-medium text-primary block text-right"
+                    className="block text-base font-medium text-primary"
                   >
                     الاسم بالكامل
                   </label>
                   <Input
                     id="fullName"
                     placeholder="ادخل اسمك"
-                    className="text-right bg-gray-50 border-gray-100 h-12"
+                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label
                     htmlFor="phone"
-                    className="text-sm font-medium text-primary block text-right"
+                    className="block text-base font-medium text-primary"
                   >
                     رقم الهاتف
                   </label>
                   <Input
                     id="phone"
                     placeholder="ادخل رقم الهاتف"
-                    className="text-right bg-gray-50 border-gray-100 h-12"
+                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label
                     htmlFor="email"
-                    className="text-sm font-medium text-primary block text-right"
+                    className="block text-base font-medium text-primary"
                   >
                     البريد الإلكتروني
                   </label>
                   <Input
                     id="email"
                     placeholder="ادخل البريد الإلكتروني"
-                    className="text-right bg-gray-50 border-gray-100 h-12"
+                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-primary block text-right">
+                  <label className="block text-base font-medium text-primary">
                     المدينة
                   </label>
                   <Select dir="rtl">
-                    <SelectTrigger className="w-full text-right bg-gray-50 border-gray-100 h-12">
+                    <SelectTrigger className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md">
                       <SelectValue placeholder="القاهرة" />
                     </SelectTrigger>
                     <SelectContent>
@@ -133,14 +132,14 @@ export default function JoinPage() {
                 <div className="space-y-2">
                   <label
                     htmlFor="idNumber"
-                    className="text-sm font-medium text-primary block text-right"
+                    className="block text-base font-medium text-primary"
                   >
                     رقم البطاقة الشخصية
                   </label>
                   <Input
                     id="idNumber"
                     placeholder="ادخل رقم البطاقة"
-                    className="text-right bg-gray-50 border-gray-100 h-12"
+                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
                   />
                 </div>
 
