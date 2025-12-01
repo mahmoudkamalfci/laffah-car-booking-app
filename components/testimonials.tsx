@@ -67,9 +67,7 @@ export default function Testimonials() {
         {/* Header */}
         <div className="text-center mb-16 relative">
           <div className="inline-block relative">
-            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">
-              آراء عملائنا
-            </h2>
+            <h2>آراء عملائنا</h2>
           </div>
           <p className="text-gray-500 text-base">
             اختر من مجموعة واسعة من السيارات المتاحة

@@ -35,9 +35,7 @@ export function WhyChooseUs() {
     <section className="py-16 bg-[#F8FAFC]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">
-            ليه تختار لفّه؟
-          </h2>
+          <h2> ليه تختار لفّه؟</h2>
           <p className="text-gray-500 text-base">
             اختر من مجموعة واسعة من السيارات المتاحة
           </p>

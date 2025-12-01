@@ -8,7 +8,7 @@ const JoinUs = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Text Section */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-right space-y-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+            <h2>
               انضم إلى سائقين لّفة وابدأ
               <br className="hidden lg:block" />
               كسب دخلك اليوم
