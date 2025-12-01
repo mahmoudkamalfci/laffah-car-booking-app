@@ -37,6 +37,7 @@
   --color-card: var(--card);
   --color-success: var(--success);
   --color-input-background: var(--input-background);
+  --color-button-disabled: var(--button-disabled);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -60,7 +61,7 @@
   --primary: #223C5B;
   --primary-foreground: 0 0% 100%;
   --secondary: #1565D8;
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary-foreground: #FFFFFF;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -85,6 +86,7 @@
   --shadow-navbar: 2px 4px 34px 0 rgba(15, 24, 44, 0.05);
   --success: hsl(142 76% 36%);
   --input-background: oklch(0.985 0.003 260.6);
+  --button-disabled: #CBD5E1;
 }
 
 .dark {
@@ -129,10 +131,10 @@
     @apply bg-background text-foreground;
   }
   h1.hero-title {
-    @apply text-4xl lg:text-6xl font-bold leading-tight;
+    @apply text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight;
   }
   p.hero-text {
-    @apply text-xl leading-relaxed;
+    @apply text-base sm:text-lg lg:text-xl leading-relaxed;
   }
   label {
     @apply text-base text-primary block;
