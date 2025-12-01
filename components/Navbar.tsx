@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,9 +24,40 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthDialogOpen, setIsAuthDialogOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Show navbar when at the top
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      }
+      // Hide when scrolling down, show when scrolling up
+      else if (currentScrollY > lastScrollY.current) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="w-full bg-transparent shadow-(--shadow-navbar)">
+    <nav
+      className={`w-full bg-white shadow-(--shadow-navbar) fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-12">
@@ -52,8 +83,9 @@ export default function Navbar() {
           {/* Auth Button - Desktop */}
           <div className="hidden md:block">
             <Button
+              variant="default"
+              size="lg"
               onClick={() => setIsAuthDialogOpen(true)}
-              className="border-primary text-white bg-primary hover:bg-primary/80 hover:text-white rounded py-2 px-6"
             >
               تسجيل الدخول / إنشاء حساب
             </Button>
@@ -67,13 +99,13 @@ export default function Navbar() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px]">
-                <SheetHeader>
-                  <SheetTitle className="text-right text-2xl font-bold">
+              <SheetContent side="right" className="w-[300px] p-10">
+                <SheetHeader className="mt-6 p-0">
+                  <SheetTitle className="text-2xl text-primary font-bold">
                     لَفّة
                   </SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col gap-4 mt-8">
+                <div className="flex flex-col gap-4">
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
@@ -89,7 +121,6 @@ export default function Navbar() {
                       setIsOpen(false);
                       setIsAuthDialogOpen(true);
                     }}
-                    className="mt-4 rounded-full border-primary text-primary bg-transparent hover:bg-primary hover:text-white"
                   >
                     تسجيل الدخول / إنشاء حساب
                   </Button>

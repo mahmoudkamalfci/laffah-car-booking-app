@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`min-h-screen bg-background font-sans antialiased ${cairo.className}`}
       >
         <Navbar />
-        {children}
+        <main className="pt-[88px]">{children}</main>
         <Footer />
       </body>
     </html>
