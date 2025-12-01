@@ -142,10 +142,11 @@ export default function JoinPage() {
                     className="bg-[#F8FAFC] border border-border h-10 rounded-md"
                   />
                 </div>
-
-                <Button className="w-full h-12 text-lg bg-[#CFD9E0] hover:bg-[#BFCAD1] text-white mt-4">
-                  التالي
-                </Button>
+                <div className="flex justify-end">
+                  <Button className="min-w-[160px] h-12 text-base bg-[#CBD5E1] hover:bg-[#BFCAD1] text-white mt-4">
+                    التالي
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>

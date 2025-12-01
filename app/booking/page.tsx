@@ -34,7 +34,14 @@ import { Input } from "@/components/ui/input";
 
 export default function BookingPage() {
   // Demo data
-  const carImages = ["/car.png", "/car-2.jpeg", "/car-3.png"];
+  const carImages = [
+    "/car.png",
+    "/car-2.jpeg",
+    "/car-3.png",
+    "/car.png",
+    "/car-2.jpeg",
+    "/car-3.png",
+  ];
 
   const specifications = [
     { icon: Fuel, label: "بنزين", value: "بنزين" },
@@ -78,154 +85,44 @@ export default function BookingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background py-8">
+    <div className="bg-[#F8FAFC] py-8">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-[350px_1fr] gap-6">
-          {/* Left Sidebar - Booking Form */}
-          <aside className="lg:sticky lg:top-8 h-fit">
-            <Card className="shadow-[var(--shadow-navbar)] border-border bg-white">
-              <CardContent className="p-6">
-                <h2 className="text-xl font-bold text-primary mb-1 text-center">
-                  احجز الآن
-                </h2>
-                <p className="text-xs text-gray-500 text-center mb-6">
-                  سيارات احترافية متاحة للإيجار 24/7 وبأسعار تنافسية
-                  <br />
-                  لتجربة سفر مميزة
-                </p>
-
-                <form className="space-y-4">
-                  {/* From Where */}
-                  <div>
-                    <label className="text-sm text-gray-700 mb-2 block text-right">
-                      من أين <span className="text-red-500">*</span>
-                    </label>
-                    <Select>
-                      <SelectTrigger className="w-full border-gray-300 bg-gray-50 rounded h-10 text-sm">
-                        <SelectValue placeholder="" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="cairo">القاهرة</SelectItem>
-                        <SelectItem value="giza">الجيزة</SelectItem>
-                        <SelectItem value="alex">الإسكندرية</SelectItem>
-                        <SelectItem value="cairo-airport">
-                          مطار القاهرة
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* Pickup Location */}
-                  <div>
-                    <label className="text-sm text-gray-700 mb-2 block text-right">
-                      سيتم الاستلام <span className="text-red-500">*</span>
-                    </label>
-                    <Input
-                      type="text"
-                      placeholder=""
-                      className="border-gray-300 bg-gray-50 rounded h-10 text-sm"
-                    />
-                  </div>
-
-                  {/* Phone Number */}
-                  <div>
-                    <label className="text-sm text-gray-700 mb-2 block text-right">
-                      رقم الهاتف <span className="text-red-500">*</span>
-                    </label>
-                    <Input
-                      type="tel"
-                      placeholder="ادخل رقم الهاتف"
-                      className="border-gray-300 bg-gray-50 rounded h-10 text-sm"
-                    />
-                  </div>
-
-                  {/* Start Date */}
-                  <div>
-                    <label className="text-sm text-gray-700 mb-2 block text-right">
-                      تاريخ البدء <span className="text-red-500">*</span>
-                    </label>
-                    <div className="relative">
-                      <Input
-                        type="text"
-                        placeholder="اختر التاريخ"
-                        className="border-gray-300 bg-gray-50 rounded h-10 text-sm pr-3"
-                      />
-                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
-                    </div>
-                  </div>
-
-                  {/* End Date */}
-                  <div>
-                    <label className="text-sm text-gray-700 mb-2 block text-right">
-                      تاريخ النهاية <span className="text-red-500">*</span>
-                    </label>
-                    <div className="relative">
-                      <Input
-                        type="text"
-                        placeholder="اختر التاريخ"
-                        className="border-gray-300 bg-gray-50 rounded h-10 text-sm pr-3"
-                      />
-                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
-                    </div>
-                  </div>
-
-                  {/* Number of Days */}
-                  <div>
-                    <label className="text-sm text-gray-700 mb-2 block text-right">
-                      عدد الأيام <span className="text-red-500">*</span>
-                    </label>
-                    <Input
-                      type="number"
-                      defaultValue="1"
-                      min="1"
-                      className="border-gray-300 bg-gray-50 rounded h-10 text-sm"
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <Button className="w-full bg-[#B8C5D6] hover:bg-[#A5B3C5] text-primary rounded h-10 font-medium mt-6">
-                    احجز الآن
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </aside>
-
+        <div className="grid lg:grid-cols-[1fr_450px] gap-8">
           {/* Right Section - Car Details */}
           <main className="space-y-6">
+            <h1>تفاصيل السيارة</h1>
             {/* Car Image Carousel */}
-            <Card className="shadow-[var(--shadow-navbar)] border-border overflow-hidden">
-              <CardContent className="p-0">
-                <Carousel
-                  opts={{
-                    align: "center",
-                    loop: true,
-                    direction: "rtl",
-                  }}
-                  className="w-full"
-                >
-                  <CarouselContent>
-                    {carImages.map((image, index) => (
-                      <CarouselItem key={index}>
-                        <div className="relative h-[400px] w-full">
-                          <Image
-                            src={image}
-                            alt={`Car image ${index + 1}`}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="translate-y-0 bg-white border-gray-200 hover:bg-gray-100 absolute top-1/2 right-4 left-auto" />
-                  <CarouselNext className="translate-y-0 bg-white border-gray-200 hover:bg-gray-100 absolute top-1/2 left-4 right-auto" />
-                </Carousel>
-              </CardContent>
-            </Card>
+            <Carousel
+              opts={{
+                align: "center",
+                loop: true,
+                direction: "rtl",
+              }}
+              className="w-full mt-6"
+            >
+              <CarouselContent>
+                {carImages.map((image, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="md:basis-1/2 lg:basis-1/3 pl-6"
+                  >
+                    <div className="relative h-[200px] w-full">
+                      <Image
+                        src={image}
+                        alt={`Car image ${index + 1}`}
+                        fill
+                        className="object-cover rounded-2xl"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="translate-y-0 bg-white border-gray-200 hover:bg-gray-100 absolute top-1/2 right-4 left-auto" />
+              <CarouselNext className="translate-y-0 bg-white border-gray-200 hover:bg-gray-100 absolute top-1/2 left-4 right-auto" />
+            </Carousel>
 
             {/* Car Specifications */}
-            <Card className="shadow-[var(--shadow-navbar)] border-border">
+            <Card className="shadow-(--shadow-navbar) border border-border rounded-3xl py-0">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-4">
                   مواصفات السيارة
@@ -257,7 +154,7 @@ export default function BookingPage() {
             </Card>
 
             {/* Features */}
-            <Card className="shadow-[var(--shadow-navbar)] border-border">
+            <Card className="shadow-(--shadow-navbar) border border-border rounded-3xl">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-4">
                   المميزات
@@ -277,7 +174,7 @@ export default function BookingPage() {
             </Card>
 
             {/* Driver Information */}
-            <Card className="shadow-[var(--shadow-navbar)] border-border">
+            <Card className="shadow-(--shadow-navbar) border border-border rounded-3xl">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-4">
                   معلومات السائق
@@ -322,7 +219,7 @@ export default function BookingPage() {
             </Card>
 
             {/* Reviews */}
-            <Card className="shadow-[var(--shadow-navbar)] border-border">
+            <Card className="shadow-(--shadow-navbar) border border-border rounded-3xl">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-4">
                   التقييمات (40)
@@ -380,6 +277,113 @@ export default function BookingPage() {
               </CardContent>
             </Card>
           </main>
+          {/* Left Sidebar - Booking Form */}
+          <Card className="w-full h-fit sticky top-4 border border-border shadow-sm rounded-3xl p-10">
+            <CardContent className="p-0">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">
+                احجز الآن
+              </h2>
+              <p className="text-sm md:text-base text-gray-500 mb-4">
+                سيارات احترافية متاحة للإيجار 24/7 وبأسعار تنافسية
+                <br />
+                لتجربة سفر مميزة
+              </p>
+
+              <form className="space-y-4">
+                {/* From Where */}
+                <div className="space-y-2">
+                  <label className="block text-base font-medium text-primary">
+                    من أين <span className="text-red-500">*</span>
+                  </label>
+                  <Select>
+                    <SelectTrigger className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md">
+                      <SelectValue placeholder="" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="cairo">القاهرة</SelectItem>
+                      <SelectItem value="giza">الجيزة</SelectItem>
+                      <SelectItem value="alex">الإسكندرية</SelectItem>
+                      <SelectItem value="cairo-airport">
+                        مطار القاهرة
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Pickup Location */}
+                <div className="space-y-2">
+                  <label className="block text-base font-medium text-primary">
+                    سيتم الاستلام <span className="text-red-500">*</span>
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder=""
+                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
+                  />
+                </div>
+
+                {/* Phone Number */}
+                <div className="space-y-2">
+                  <label className="block text-base font-medium text-primary">
+                    رقم الهاتف <span className="text-red-500">*</span>
+                  </label>
+                  <Input
+                    type="number"
+                    placeholder="ادخل رقم الهاتف"
+                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
+                  />
+                </div>
+
+                {/* Start Date */}
+                <div className="space-y-2">
+                  <label className="block text-base font-medium text-primary">
+                    تاريخ البدء <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <Input
+                      type="text"
+                      placeholder="اختر التاريخ"
+                      className="bg-[#F8FAFC] border border-border h-10 rounded-md pr-3"
+                    />
+                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+                  </div>
+                </div>
+
+                {/* End Date */}
+                <div className="space-y-2">
+                  <label className="block text-base font-medium text-primary">
+                    تاريخ النهاية <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <Input
+                      type="text"
+                      placeholder="اختر التاريخ"
+                      className="bg-[#F8FAFC] border border-border h-10 rounded-md pr-3"
+                    />
+                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+                  </div>
+                </div>
+
+                {/* Number of Days */}
+                <div className="space-y-2">
+                  <label className="block text-base font-medium text-primary">
+                    عدد الأيام <span className="text-red-500">*</span>
+                  </label>
+                  <Input
+                    type="number"
+                    defaultValue="1"
+                    min="1"
+                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <Button className="w-full bg-[#CBD5E1] hover:bg-[#A5B3C5] text-white rounded h-12 font-medium">
+                  احجز الآن
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
