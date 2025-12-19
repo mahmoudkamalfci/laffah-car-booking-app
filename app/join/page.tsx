@@ -61,7 +61,7 @@ export default function JoinPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-7">
-            <Card className="w-full bg-white shadow-sm border border-border p-6 gap-4">
+            <Card className="p-6 gap-4">
               <CardHeader className="px-0 pt-0">
                 <CardTitle className="text-2xl font-bold text-primary ">
                   البيانات الشخصية
@@ -72,51 +72,22 @@ export default function JoinPage() {
               </CardHeader>
               <CardContent className="px-0 space-y-4">
                 <div className="space-y-2">
-                  <label
-                    htmlFor="fullName"
-                    className="block text-base font-medium text-primary"
-                  >
-                    الاسم بالكامل
-                  </label>
-                  <Input
-                    id="fullName"
-                    placeholder="ادخل اسمك"
-                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
-                  />
+                  <label htmlFor="fullName">الاسم بالكامل</label>
+                  <Input id="fullName" placeholder="ادخل اسمك" />
                 </div>
 
                 <div className="space-y-2">
-                  <label
-                    htmlFor="phone"
-                    className="block text-base font-medium text-primary"
-                  >
-                    رقم الهاتف
-                  </label>
-                  <Input
-                    id="phone"
-                    placeholder="ادخل رقم الهاتف"
-                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
-                  />
+                  <label htmlFor="phone">رقم الهاتف</label>
+                  <Input id="phone" placeholder="ادخل رقم الهاتف" />
                 </div>
 
                 <div className="space-y-2">
-                  <label
-                    htmlFor="email"
-                    className="block text-base font-medium text-primary"
-                  >
-                    البريد الإلكتروني
-                  </label>
-                  <Input
-                    id="email"
-                    placeholder="ادخل البريد الإلكتروني"
-                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
-                  />
+                  <label htmlFor="email">البريد الإلكتروني</label>
+                  <Input id="email" placeholder="ادخل البريد الإلكتروني" />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="block text-base font-medium text-primary">
-                    المدينة
-                  </label>
+                  <label htmlFor="city">المدينة</label>
                   <Select dir="rtl">
                     <SelectTrigger className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md">
                       <SelectValue placeholder="القاهرة" />
@@ -130,20 +101,11 @@ export default function JoinPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label
-                    htmlFor="idNumber"
-                    className="block text-base font-medium text-primary"
-                  >
-                    رقم البطاقة الشخصية
-                  </label>
-                  <Input
-                    id="idNumber"
-                    placeholder="ادخل رقم البطاقة"
-                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
-                  />
+                  <label htmlFor="idNumber">رقم البطاقة الشخصية</label>
+                  <Input id="idNumber" placeholder="ادخل رقم البطاقة" />
                 </div>
                 <div className="flex justify-end">
-                  <Button className="min-w-[160px] h-12 text-base bg-[#CBD5E1] hover:bg-[#BFCAD1] text-white mt-4">
+                  <Button className="min-w-[160px]" size="lg" disabled>
                     التالي
                   </Button>
                 </div>

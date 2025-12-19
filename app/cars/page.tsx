@@ -76,7 +76,7 @@ export default function CarsPage() {
       {/* Header Section */}
       <div className="py-8">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+          <h1 className="text-2xl md:text-3xl font-bold text-primary mb-2">
             اختر سيارتك المفضلة
           </h1>
           <p className="text-xl text-gray-500">2 سيارة متاحة </p>

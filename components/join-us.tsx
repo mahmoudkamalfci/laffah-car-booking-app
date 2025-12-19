@@ -17,12 +17,7 @@ const JoinUs = () => {
               سجّل عربيتك على لّفة ووصل لعشرات العملاء يوميًا. خطوات بسيطة —
               أرباح سريعة — بدون أي تعقيد.
             </p>
-            <Button
-              size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-white px-8 py-6 text-base rounded-sm"
-            >
-              سجّل كسائق
-            </Button>
+            <Button size="lg">سجّل كسائق</Button>
           </div>
           {/* Image Section */}
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] flex justify-center lg:justify-center">

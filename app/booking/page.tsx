@@ -122,7 +122,7 @@ export default function BookingPage() {
             </Carousel>
 
             {/* Car Specifications */}
-            <Card className="shadow-(--shadow-navbar) border border-border rounded-3xl py-0">
+            <Card className="py-0">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-4">
                   مواصفات السيارة
@@ -154,7 +154,7 @@ export default function BookingPage() {
             </Card>
 
             {/* Features */}
-            <Card className="shadow-(--shadow-navbar) border border-border rounded-3xl">
+            <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-4">
                   المميزات
@@ -174,7 +174,7 @@ export default function BookingPage() {
             </Card>
 
             {/* Driver Information */}
-            <Card className="shadow-(--shadow-navbar) border border-border rounded-3xl">
+            <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-4">
                   معلومات السائق
@@ -219,7 +219,7 @@ export default function BookingPage() {
             </Card>
 
             {/* Reviews */}
-            <Card className="shadow-(--shadow-navbar) border border-border rounded-3xl">
+            <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-4">
                   التقييمات (40)
@@ -278,7 +278,7 @@ export default function BookingPage() {
             </Card>
           </main>
           {/* Left Sidebar - Booking Form */}
-          <Card className="w-full h-fit sticky top-4 border border-border shadow-sm rounded-3xl p-10">
+          <Card className="sticky top-4 p-10">
             <CardContent className="p-0">
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">
                 احجز الآن
@@ -292,11 +292,11 @@ export default function BookingPage() {
               <form className="space-y-4">
                 {/* From Where */}
                 <div className="space-y-2">
-                  <label className="block text-base font-medium text-primary">
+                  <label>
                     من أين <span className="text-red-500">*</span>
                   </label>
                   <Select>
-                    <SelectTrigger className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md">
+                    <SelectTrigger>
                       <SelectValue placeholder="" />
                     </SelectTrigger>
                     <SelectContent>
@@ -312,73 +312,52 @@ export default function BookingPage() {
 
                 {/* Pickup Location */}
                 <div className="space-y-2">
-                  <label className="block text-base font-medium text-primary">
+                  <label>
                     سيتم الاستلام <span className="text-red-500">*</span>
                   </label>
-                  <Input
-                    type="text"
-                    placeholder=""
-                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
-                  />
+                  <Input type="text" placeholder="" />
                 </div>
 
                 {/* Phone Number */}
                 <div className="space-y-2">
-                  <label className="block text-base font-medium text-primary">
+                  <label>
                     رقم الهاتف <span className="text-red-500">*</span>
                   </label>
-                  <Input
-                    type="number"
-                    placeholder="ادخل رقم الهاتف"
-                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
-                  />
+                  <Input type="number" placeholder="ادخل رقم الهاتف" />
                 </div>
 
                 {/* Start Date */}
                 <div className="space-y-2">
-                  <label className="block text-base font-medium text-primary">
+                  <label>
                     تاريخ البدء <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <Input
-                      type="text"
-                      placeholder="اختر التاريخ"
-                      className="bg-[#F8FAFC] border border-border h-10 rounded-md pr-3"
-                    />
+                    <Input type="text" placeholder="اختر التاريخ" />
                     <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
                   </div>
                 </div>
 
                 {/* End Date */}
                 <div className="space-y-2">
-                  <label className="block text-base font-medium text-primary">
+                  <label>
                     تاريخ النهاية <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <Input
-                      type="text"
-                      placeholder="اختر التاريخ"
-                      className="bg-[#F8FAFC] border border-border h-10 rounded-md pr-3"
-                    />
+                    <Input type="text" placeholder="اختر التاريخ" />
                     <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
                   </div>
                 </div>
 
                 {/* Number of Days */}
                 <div className="space-y-2">
-                  <label className="block text-base font-medium text-primary">
+                  <label>
                     عدد الأيام <span className="text-red-500">*</span>
                   </label>
-                  <Input
-                    type="number"
-                    defaultValue="1"
-                    min="1"
-                    className="bg-[#F8FAFC] border border-border h-10 rounded-md"
-                  />
+                  <Input type="number" defaultValue="1" min="1" />
                 </div>
 
                 {/* Submit Button */}
-                <Button className="w-full bg-[#CBD5E1] hover:bg-[#A5B3C5] text-white rounded h-12 font-medium">
+                <Button size="lg" className="w-full" disabled>
                   احجز الآن
                 </Button>
               </form>

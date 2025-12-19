@@ -13,7 +13,7 @@ import {
 
 export function FiltersSidebar() {
   return (
-    <Card className="w-full h-fit sticky top-4 border border-border shadow-sm rounded-3xl py-8 gap-4">
+    <Card className="sticky top-4 py-8 gap-4">
       <CardHeader className="px-8">
         <div className="flex items-center justify-between">
           <CardTitle className="text-2xl font-medium text-primary">
@@ -31,25 +31,15 @@ export function FiltersSidebar() {
       <CardContent className="space-y-4 px-8">
         {/* Search */}
         <div className="space-y-2">
-          <label className="block text-base font-medium text-primary">
-            بحث
-          </label>
-          <Input
-            placeholder="ابحث عن سيارة...."
-            className="bg-[#F8FAFC] border border-border h-10 rounded-md"
-          />
+          <label>بحث</label>
+          <Input placeholder="ابحث عن سيارة...." />
         </div>
 
         {/* Pickup Location */}
         <div className="space-y-2">
-          <label className="block text-base font-medium text-primary">
-            مكان الاستلام
-          </label>
+          <label>مكان الاستلام</label>
           <Select>
-            <SelectTrigger
-              className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md"
-              dir="rtl"
-            >
+            <SelectTrigger dir="rtl">
               <SelectValue placeholder="مطار القاهرة الدولي" />
             </SelectTrigger>
             <SelectContent dir="rtl">
@@ -63,14 +53,9 @@ export function FiltersSidebar() {
 
         {/* Car Brand (Type) */}
         <div className="space-y-2">
-          <label className="block text-base font-medium text-primary">
-            نوع العربية
-          </label>
+          <label>نوع العربية</label>
           <Select>
-            <SelectTrigger
-              className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md"
-              dir="rtl"
-            >
+            <SelectTrigger dir="rtl">
               <SelectValue placeholder="كيا سبورتاج" />
             </SelectTrigger>
             <SelectContent dir="rtl">
@@ -85,14 +70,9 @@ export function FiltersSidebar() {
 
         {/* Car Body Shape */}
         <div className="space-y-2">
-          <label className="block text-base font-medium text-primary">
-            شكل العربية
-          </label>
+          <label>شكل العربية</label>
           <Select>
-            <SelectTrigger
-              className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md"
-              dir="rtl"
-            >
+            <SelectTrigger dir="rtl">
               <SelectValue placeholder="سيدان" />
             </SelectTrigger>
             <SelectContent dir="rtl">
@@ -106,14 +86,9 @@ export function FiltersSidebar() {
 
         {/* Sort By */}
         <div className="space-y-2">
-          <label className="block text-base font-medium text-primary">
-            ترتيب حسب
-          </label>
+          <label>ترتيب حسب</label>
           <Select>
-            <SelectTrigger
-              className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md"
-              dir="rtl"
-            >
+            <SelectTrigger dir="rtl">
               <SelectValue placeholder="الأعلي تقييماً" />
             </SelectTrigger>
             <SelectContent dir="rtl">

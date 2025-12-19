@@ -82,7 +82,7 @@ function CarCard({ car }: { car: CarListing }) {
 
 function CardInfo({ car }: { car: CarListing }) {
   return (
-    <Card className="shadow-none bg-white rounded-none px-4 lg:px-10 border-none w-full lg:w-auto">
+    <Card className="shadow-none rounded-none px-4 lg:px-10 border-none w-full lg:w-auto">
       <CardContent className="p-0">
         {/* Top Stats Box */}
         <div className="bg-[#EBEBF9] rounded-2xl p-4 flex items-center justify-between mb-4">

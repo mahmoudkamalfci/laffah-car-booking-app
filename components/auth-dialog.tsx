@@ -60,35 +60,21 @@ export default function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px] p-0 gap-0 bg-white">
-        {/* Custom Close Button */}
-        <button
-          onClick={handleClose}
-          className="absolute left-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground z-10"
-        >
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </button>
-
-        <div className="p-8 pt-12">
+      <DialogContent className="sm:max-w-[450px] gap-0 bg-white p-10 rounded-3xl">
+        <div>
           {/* Step 1: Phone Number */}
           {step === 1 && (
-            <div className="space-y-6">
-              <DialogHeader className="space-y-3 text-center">
-                <DialogTitle className="text-2xl font-bold text-primary">
-                  مرحباً بك في لفّة
-                </DialogTitle>
-                <p className="text-sm text-muted-foreground">
+            <div className="space-y-4">
+              <DialogHeader className="space-y-0">
+                <DialogTitle>مرحباً بك في لفّة</DialogTitle>
+                <p className="text-sm sm:text-base text-muted-foreground">
                   يرجى تسجيل الدخول أو إنشاء حساب أدناه.
                 </p>
               </DialogHeader>
 
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label
-                    htmlFor="phone"
-                    className="text-sm font-medium text-right block text-destructive"
-                  >
+                  <label htmlFor="phone">
                     رقم الرقم <span className="text-destructive">*</span>
                   </label>
                   <Input
@@ -97,20 +83,21 @@ export default function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
                     placeholder="ادخل رقم الرقم"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="text-right h-12 bg-[#F8FAFC] border-border"
                     dir="rtl"
                   />
                 </div>
 
                 <Button
                   onClick={handlePhoneSubmit}
-                  className="w-full h-12 bg-[#C5D3E0] hover:bg-[#B5C3D0] text-primary font-medium rounded-lg"
+                  className="w-full"
+                  size="lg"
                 >
                   المتابعة باستخدام الرقم
                 </Button>
 
-                <p className="text-xs text-center text-muted-foreground leading-relaxed">
-                  بتسجيل الدخول، أنت توافق على{" "}
+                <p className="text-sm text-center text-muted-foreground leading-relaxed">
+                  بتسجيل الدخول، أنت توافق على
+                  <br />
                   <Link
                     href="/terms"
                     className="text-secondary hover:underline"
@@ -133,15 +120,11 @@ export default function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
           {/* Step 2: OTP Verification */}
           {step === 2 && (
             <div className="space-y-6">
-              <DialogHeader className="space-y-3 text-center">
-                <DialogTitle className="text-2xl font-bold text-primary">
-                  أدخل كود التحقق
-                </DialogTitle>
+              <DialogHeader className="space-y-0 text-center">
+                <DialogTitle>أدخل كود التحقق</DialogTitle>
                 <div className="space-y-1">
-                  <p className="text-sm text-muted-foreground">
-                    أرسلنا رمزاً إلى الرقم 011 54285418 عبر
-                  </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm sm:text-base text-muted-foreground">
+                    أرسلنا رمزاً إلى الرقم 011 54285418 عبر <br />
                     واتساب، يرجى إدخاله أدناه.
                   </p>
                   <button
@@ -155,28 +138,19 @@ export default function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
 
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label
-                    htmlFor="otp"
-                    className="text-sm font-medium text-right block"
-                  >
-                    كود التحقق
-                  </label>
+                  <label htmlFor="otp">كود التحقق</label>
                   <Input
                     id="otp"
                     type="text"
                     placeholder="ادخل كود التحقق"
                     value={otp}
                     onChange={(e) => setOtp(e.target.value)}
-                    className="text-right h-12 bg-[#F8FAFC] border-border"
                     dir="rtl"
                     maxLength={6}
                   />
                 </div>
 
-                <Button
-                  onClick={handleOtpSubmit}
-                  className="w-full h-12 bg-[#C5D3E0] hover:bg-[#B5C3D0] text-primary font-medium rounded-lg"
-                >
+                <Button onClick={handleOtpSubmit} className="w-full" size="lg">
                   تحقق
                 </Button>
 
@@ -201,23 +175,17 @@ export default function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
           {/* Step 3: Profile Completion */}
           {step === 3 && (
             <div className="space-y-6">
-              <DialogHeader className="space-y-3 text-center">
-                <DialogTitle className="text-2xl font-bold text-primary">
-                  أكمل ملفك الشخصي
-                </DialogTitle>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  لقد تم التحقق من رقم هاتفك، يرجى اختيار بريد
-                  <br />
-                  إلكتروني لربطه بحسابك.
+              <DialogHeader className="space-y-0 text-center">
+                <DialogTitle>أكمل ملفك الشخصي</DialogTitle>
+                <p className="text-sm sm:text-base text-muted-foreground">
+                  لقد تم التحقق من رقم هاتفك، يرجى اختيار بريد إلكتروني لربطه
+                  بحسابك.
                 </p>
               </DialogHeader>
 
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label
-                    htmlFor="name"
-                    className="text-sm font-medium text-right block"
-                  >
+                  <label htmlFor="name">
                     الاسم بالكامل <span className="text-destructive">*</span>
                   </label>
                   <Input
@@ -226,32 +194,26 @@ export default function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
                     placeholder="مثال : إبراهيم المري"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="text-right h-12 bg-[#F8FAFC] border-border"
                     dir="rtl"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label
-                    htmlFor="email"
-                    className="text-sm font-medium text-right block"
-                  >
-                    البريد الإلكتروني
-                  </label>
+                  <label htmlFor="email">البريد الإلكتروني</label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="you@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="text-right h-12 bg-[#F8FAFC] border-border"
-                    dir="ltr"
+                    dir="rtl"
                   />
                 </div>
 
                 <Button
                   onClick={handleProfileSubmit}
-                  className="w-full h-12 bg-[#C5D3E0] hover:bg-[#B5C3D0] text-primary font-medium rounded-lg"
+                  className="w-full"
+                  size="lg"
                 >
                   أكمل حسابك
                 </Button>
