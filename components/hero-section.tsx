@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -11,12 +11,10 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { Calendar, Check, MapPin } from "lucide-react";
+import { Calendar, Check } from "lucide-react";
 import { Textarea } from "./ui/textarea";
 
 export function HeroSection() {
-  const [activeTab, setActiveTab] = useState<"search" | "contact">("search");
-
   const features = [
     { text: "حجز سهل وواضح" },
     { text: "خيارات في كل مكان" },
@@ -29,8 +27,8 @@ export function HeroSection() {
   return (
     <section
       className="relative min-h-[500px] sm:min-h-[600px]
-     bg-[linear-gradient(127deg,rgba(3,35,80,0.15)_18.28%,rgba(0,93,215,0.50)_49.83%)]
-      bg-blue-900 overflow-hidden
+     bg-[--image-hero-gradient]
+      overflow-hidden
       rounded-2xl sm:rounded-3xl mx-4 
       "
     >
@@ -62,7 +60,7 @@ export function HeroSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <span className="w-[24px] h-[24px] shrink-0 flex items-center justify-center bg-success rounded-full">
+                  <span className="size-6 shrink-0 flex items-center justify-center bg-success rounded-full">
                     <Check className="h-4 w-4 text-white" />
                   </span>
                   <span className="text-sm font-semibold">{feature.text}</span>

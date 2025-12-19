@@ -38,6 +38,15 @@
   --color-success: var(--success);
   --color-input-background: var(--input-background);
   --color-button-disabled: var(--button-disabled);
+  --color-rating: var(--rating);
+  --color-stats-bg: var(--stats-bg);
+  --color-stats-icon-bg: var(--stats-icon-bg);
+  --color-tag-bg: var(--tag-bg);
+
+  --color-footer-bg: var(--footer-bg);
+
+  /* Hero specific */
+  --image-hero-gradient: linear-gradient(127deg, rgba(3, 35, 80, 0.15) 18.28%, rgba(0, 93, 215, 0.50) 49.83%);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -87,6 +96,11 @@
   --success: hsl(142 76% 36%);
   --input-background: oklch(0.985 0.003 260.6);
   --button-disabled: #CBD5E1;
+  --rating: #facc15;
+  --stats-bg: #EBEBF9;
+  --stats-icon-bg: #D4D4F5;
+  --tag-bg: #F8FAFC;
+  --footer-bg: #0F182C;
 }
 
 .dark {
@@ -121,6 +135,12 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  /* Dark mode overrides for new tokens - adjusting to be visible in dark mode */
+  --rating: #facc15; /* Yellow often stays same or slightly adjusted */
+  --stats-bg: oklch(0.25 0 0); /* Darker gray for stats bg */
+  --stats-icon-bg: oklch(0.3 0 0); /* Slightly lighter than stats bg */
+  --tag-bg: oklch(0.25 0 0);
+  --footer-bg: oklch(0.1 0 0);
 }
 
 @layer base {

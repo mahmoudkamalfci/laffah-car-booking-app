@@ -70,7 +70,7 @@ function CarCard({ car }: { car: CarListing }) {
             {car.carName}
           </p>
           <p className="text-xs flex items-center gap-1">
-            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+            <Star className="h-4 w-4 fill-rating text-rating" />
             <span className="text-primary">{car.ownerRating}</span>
             <span className="text-primary">({car.ownerReviews} تقييم)</span>
           </p>
@@ -85,8 +85,8 @@ function CardInfo({ car }: { car: CarListing }) {
     <Card className="shadow-none rounded-none px-4 lg:px-10 border-none w-full lg:w-auto">
       <CardContent className="p-0">
         {/* Top Stats Box */}
-        <div className="bg-[#EBEBF9] rounded-2xl p-4 flex items-center justify-between mb-4">
-          <div className="bg-[#D4D4F5] p-2 rounded-[14px] text-primary">
+        <div className="bg-stats-bg rounded-2xl p-4 flex items-center justify-between mb-4">
+          <div className="bg-stats-icon-bg p-2 rounded-[14px] text-primary">
             <Route className="w-5 h-5" />
           </div>
           <div className="flex flex-col">
@@ -147,16 +147,16 @@ function CardInfo({ car }: { car: CarListing }) {
             {car.tags?.map((tag) => (
               <span
                 key={tag}
-                className="bg-[#F8FAFC] text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm"
+                className="bg-tag-bg text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm"
               >
                 {tag}
               </span>
             )) || (
               <>
-                <span className="bg-[#F8FAFC] text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                <span className="bg-tag-bg text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
                   رحلات سياحية
                 </span>
-                <span className="bg-[#F8FAFC] text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                <span className="bg-tag-bg text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
                   مطار
                 </span>
               </>
