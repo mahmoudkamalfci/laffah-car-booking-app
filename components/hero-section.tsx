@@ -27,20 +27,18 @@ export function HeroSection() {
   return (
     <section
       className="relative min-h-[500px] sm:min-h-[600px]
-     bg-[--image-hero-gradient]
       overflow-hidden
-      rounded-2xl sm:rounded-3xl mx-4 
-      "
+      rounded-2xl sm:rounded-3xl mx-4"
     >
-      {/* Background Image Overlay */}
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `url('/hero-img.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/vroomo-car-rental-video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
       />
+      <div className="absolute inset-0 w-full h-full bg-(image:--image-hero-gradient) z-0"></div>
 
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">

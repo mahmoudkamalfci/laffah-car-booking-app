@@ -46,7 +46,7 @@
   --color-footer-bg: var(--footer-bg);
 
   /* Hero specific */
-  --image-hero-gradient: linear-gradient(127deg, rgba(3, 35, 80, 0.15) 18.28%, rgba(0, 93, 215, 0.50) 49.83%);
+  --image-hero-gradient: linear-gradient(127.42deg, rgba(3, 35, 80, 0.15) 18.28%, rgba(0, 93, 215, 0.5) 49.83%);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
