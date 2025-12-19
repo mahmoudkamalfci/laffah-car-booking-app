@@ -13,7 +13,7 @@ import {
 
 export function FiltersSidebar() {
   return (
-    <Card className="sticky top-4 py-8 gap-4">
+    <Card className="sticky top-4 py-8 gap-4 shadow-(--primary-shadow)">
       <CardHeader className="px-8">
         <div className="flex items-center justify-between">
           <CardTitle className="text-2xl font-medium text-primary">

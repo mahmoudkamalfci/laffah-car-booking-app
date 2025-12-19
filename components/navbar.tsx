@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,8 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import AuthDialog from "@/components/auth-dialog";
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
@@ -26,6 +29,7 @@ export default function Navbar() {
   const [isAuthDialogOpen, setIsAuthDialogOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +67,12 @@ export default function Navbar() {
           <div className="flex items-center gap-12">
             {/* Logo */}
             <Link href="/" className="text-primary text-4xl font-bold">
-              لَفّة
+              <Image
+                src="/Laffah-Logo.png"
+                alt="Logo"
+                width={103}
+                height={45}
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -72,7 +81,12 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-primary hover:bg-secondary hover:text-white transition-colors text-[16px] py-2 px-4 rounded-md"
+                  className={clsx(
+                    {
+                      "text-secondary": pathname === link.href,
+                    },
+                    "text-primary hover:text-secondary transition-colors text-[16px] py-2 px-4 rounded-md font-medium"
+                  )}
                 >
                   {link.label}
                 </Link>

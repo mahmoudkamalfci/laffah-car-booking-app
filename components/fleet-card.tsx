@@ -1,7 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Calendar, Star, Car, MapPin, Clock, Route } from "lucide-react";
+import {
+  Phone,
+  Calendar,
+  Star,
+  Car,
+  MapPin,
+  Armchair,
+  Route,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -82,12 +90,12 @@ function CarCard({ car }: { car: CarListing }) {
 
 function CardInfo({ car }: { car: CarListing }) {
   return (
-    <Card className="shadow-none rounded-none px-4 lg:px-10 border-none w-full lg:w-auto">
+    <Card className="shadow-none rounded-none px-4 lg:px-10 border border-secondary-100 w-full lg:w-auto">
       <CardContent className="p-0">
         {/* Top Stats Box */}
-        <div className="bg-stats-bg rounded-2xl p-4 flex items-center justify-between mb-4">
+        <div className="bg-card-custom-background rounded-2xl p-4 flex items-center justify-between mb-4 border border-secondary-100">
           <div className="bg-stats-icon-bg p-2 rounded-[14px] text-primary">
-            <Route className="w-5 h-5" />
+            <Route className="size-5" />
           </div>
           <div className="flex flex-col">
             <span className="text-primary font-bold text-base">
@@ -102,7 +110,7 @@ function CardInfo({ car }: { car: CarListing }) {
           {/* Car Type */}
           <div className="flex items-center gap-4">
             <div className="bg-white p-2 rounded-full shadow-sm">
-              <Car className="w-5 h-5 text-primary" />
+              <Car className="size-5 text-primary" />
             </div>
             <div className="text-right">
               <p className="text-gray-500 text-xs mb-1">نوع السيارة</p>
@@ -115,7 +123,7 @@ function CardInfo({ car }: { car: CarListing }) {
           {/* City */}
           <div className="flex items-center gap-4">
             <div className="bg-white p-2 rounded-full shadow-sm">
-              <MapPin className="w-5 h-5 text-primary" />
+              <MapPin className="size-5 text-primary" />
             </div>
             <div className="text-right">
               <p className="text-gray-500 text-xs mb-1">المدينة</p>
@@ -126,10 +134,10 @@ function CardInfo({ car }: { car: CarListing }) {
           {/* Response Time */}
           <div className="flex items-center gap-4">
             <div className="bg-white p-2 rounded-full shadow-sm">
-              <Clock className="w-5 h-5 text-primary" />
+              <Armchair className="size-5 text-primary" />
             </div>
             <div className="text-right">
-              <p className="text-gray-500 text-xs mb-1">وقت الاستجابة</p>
+              <p className="text-gray-500 text-xs mb-1">المقاعد</p>
               <p className="text-primary font-bold text-sm">
                 {car.availability}
               </p>
@@ -147,16 +155,16 @@ function CardInfo({ car }: { car: CarListing }) {
             {car.tags?.map((tag) => (
               <span
                 key={tag}
-                className="bg-tag-bg text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm"
+                className="bg-secondary-bg text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm"
               >
                 {tag}
               </span>
             )) || (
               <>
-                <span className="bg-tag-bg text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                <span className="bg-secondary-bg text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
                   رحلات سياحية
                 </span>
-                <span className="bg-tag-bg text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                <span className="bg-secondary-bg text-primary px-4 py-2 rounded-full text-sm font-medium shadow-sm">
                   مطار
                 </span>
               </>
@@ -171,7 +179,7 @@ function CardInfo({ car }: { car: CarListing }) {
 function PriceCard({ car }: { car: CarListing }) {
   return (
     <div className="h-full bg-card-custom-background p-6 w-full lg:w-auto">
-      <Card className=" border border-border card-custom-shadow rounded-[14px] py-0 overflow-hidden mb-6">
+      <Card className=" border border-secondary-100 rounded-[14px] py-0 overflow-hidden mb-6">
         <CardContent className="p-4">
           <div className="text-center">
             <p className="text-4xl font-bold">
@@ -179,7 +187,7 @@ function PriceCard({ car }: { car: CarListing }) {
             </p>
             <p className="text-sm text-gray-600">جنيه / اليوم</p>
           </div>
-          <div className="border-t border-border my-4" />
+          <div className="border-t border-secondary-100 my-4" />
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-600">سعر الساعة</span>
             <span className="font-medium text-gray-600">
@@ -202,12 +210,12 @@ function PriceCard({ car }: { car: CarListing }) {
 
 export function FleetCard({ car }: { car: CarListing }) {
   return (
-    <div className="flex flex-col lg:flex-row gap-4 shadow-(--primary-shadow)">
+    <div className="flex flex-col lg:flex-row shadow-(--primary-shadow)">
       <div className="flex-1 w-full lg:w-auto">
         <CarCard car={car} />
       </div>
       <CardInfo car={car} />
-      <div className="w-full lg:w-auto">
+      <div className=" w-full lg:w-auto">
         <PriceCard car={car} />
       </div>
     </div>

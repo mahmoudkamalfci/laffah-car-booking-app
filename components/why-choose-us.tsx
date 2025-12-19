@@ -32,7 +32,7 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-16 bg-[#F8FAFC]">
+    <section className="py-16 bg-secondary-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2> ليه تختار لفّه؟</h2>

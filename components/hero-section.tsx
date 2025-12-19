@@ -11,8 +11,9 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { Calendar, Check } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { Textarea } from "./ui/textarea";
+import { FeatureItem } from "./feature-item";
 
 export function HeroSection() {
   const features = [
@@ -57,12 +58,7 @@ export function HeroSection() {
             {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <span className="size-6 shrink-0 flex items-center justify-center bg-success rounded-full">
-                    <Check className="h-4 w-4 text-white" />
-                  </span>
-                  <span className="text-sm font-semibold">{feature.text}</span>
-                </div>
+                <FeatureItem key={index} text={feature.text} />
               ))}
             </div>
           </div>

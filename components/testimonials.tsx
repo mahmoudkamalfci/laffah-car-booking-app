@@ -79,7 +79,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial) => (
             <Card
               key={testimonial.id}
-              className={`rounded-md transition-shadow duration-300 hover:shadow-lg`}
+              className={`rounded-md shadow-(--primary-shadow) transition-shadow duration-300 hover:shadow-lg`}
             >
               <CardContent className="p-6">
                 {/* Card Header */}

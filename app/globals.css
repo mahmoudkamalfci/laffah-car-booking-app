@@ -29,6 +29,7 @@
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
+  --color-secondary-100: var(--secondary-100);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
@@ -39,9 +40,8 @@
   --color-input-background: var(--input-background);
   --color-button-disabled: var(--button-disabled);
   --color-rating: var(--rating);
-  --color-stats-bg: var(--stats-bg);
   --color-stats-icon-bg: var(--stats-icon-bg);
-  --color-tag-bg: var(--tag-bg);
+  --color-secondary-bg: var(--secondary-bg);
 
   --color-footer-bg: var(--footer-bg);
 
@@ -62,7 +62,7 @@
   --background: #FFFFFF;
   --foreground: 222 47% 20%;
   --card: #FFFFFF;
-  --card-custom-background: #F8FAFC;
+  --card-custom-background: #F0F5F9;
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
@@ -70,6 +70,7 @@
   --primary-foreground: #FFFFFF;
   --secondary: #1565D8;
   --secondary-foreground: #FFFFFF;
+  --secondary-100: #E6EEF8;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -96,9 +97,8 @@
   --input-background: oklch(0.985 0.003 260.6);
   --button-disabled: #CBD5E1;
   --rating: #facc15;
-  --stats-bg: #EBEBF9;
   --stats-icon-bg: #D4D4F5;
-  --tag-bg: #F8FAFC;
+  --secondary-bg: #F8FAFC;
   --footer-bg: #0F182C;
 }
 
@@ -136,9 +136,8 @@
   --sidebar-ring: oklch(0.556 0 0);
   /* Dark mode overrides for new tokens - adjusting to be visible in dark mode */
   --rating: #facc15; /* Yellow often stays same or slightly adjusted */
-  --stats-bg: oklch(0.25 0 0); /* Darker gray for stats bg */
   --stats-icon-bg: oklch(0.3 0 0); /* Slightly lighter than stats bg */
-  --tag-bg: oklch(0.25 0 0);
+  --secondary-bg: oklch(0.25 0 0);
   --footer-bg: oklch(0.1 0 0);
 }
 
@@ -159,10 +158,6 @@
     @apply text-base text-primary block;
   }
   h2 {
-    @apply text-3xl md:text-5xl font-bold text-primary md:mb-4 mb-2;
-  }
-  .card-custom-shadow {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10) !important;
-    /* box-shadow: 2px 4px 34px 0 rgba(15, 24, 44, 0.05); */
+    @apply text-3xl md:text-5xl font-bold text-primary md:mb-4 mb-2 leading-tight;
   }
 }

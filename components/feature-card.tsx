@@ -18,7 +18,7 @@ export function FeatureCard({
 }: FeatureCardProps) {
   return (
     <Card
-      className={`border-none hover:shadow-lg rounded-md transition-shadow duration-300 ${className}`}
+      className={`border-none shadow-(--primary-shadow) hover:shadow-lg rounded-md transition-shadow duration-300 ${className}`}
     >
       <CardContent className="flex flex-col items-center text-center p-6">
         <div

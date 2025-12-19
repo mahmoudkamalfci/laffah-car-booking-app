@@ -47,7 +47,7 @@ const features = [
 
 export default function JoinPage() {
   return (
-    <div className="min-h-screen bg-[#F8FAFC]">
+    <div className="min-h-screen bg-secondary-bg">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="py-8">
@@ -61,7 +61,7 @@ export default function JoinPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-7">
-            <Card className="p-6 gap-4">
+            <Card className="p-6 gap-4 shadow-(--primary-shadow)">
               <CardHeader className="px-0 pt-0">
                 <CardTitle className="text-2xl font-bold text-primary ">
                   البيانات الشخصية
@@ -89,7 +89,7 @@ export default function JoinPage() {
                 <div className="space-y-2">
                   <label htmlFor="city">المدينة</label>
                   <Select dir="rtl">
-                    <SelectTrigger className="w-full bg-[#F8FAFC] border border-border h-10 rounded-md">
+                    <SelectTrigger className="w-full bg-secondary-bg border border-border h-10 rounded-md">
                       <SelectValue placeholder="القاهرة" />
                     </SelectTrigger>
                     <SelectContent>

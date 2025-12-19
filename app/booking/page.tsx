@@ -7,10 +7,11 @@ import {
   Users,
   Star,
   Fuel,
-  MessageCircle,
-  Phone,
-  Check,
   BadgeCheck,
+  ArrowRight,
+  CarFront,
+  Armchair,
+  SquareStar,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -31,23 +32,23 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { FeatureItem } from "@/components/feature-item";
 
 export default function BookingPage() {
   // Demo data
   const carImages = [
-    "/car.png",
     "/car-2.jpeg",
-    "/car-3.png",
-    "/car.png",
     "/car-2.jpeg",
-    "/car-3.png",
+    "/car-2.jpeg",
+    "/car-2.jpeg",
+    "/car-2.jpeg",
   ];
 
   const specifications = [
-    { icon: Fuel, label: "بنزين", value: "بنزين" },
-    { icon: Star, label: "التقييم", value: "4.9" },
-    { icon: Users, label: "المقاعد", value: "5 لمقاعد" },
-    { icon: MapPin, label: "السعر", value: "400 ريال" },
+    { icon: CarFront, label: "الرحلات", value: "4.9" },
+    { icon: Armchair, label: "المقاعد", value: "5" },
+    { icon: SquareStar, label: "التقييم", value: "4.9" },
+    { icon: Fuel, label: "الوقود", value: "بنزين" },
   ];
 
   const features = [
@@ -85,12 +86,25 @@ export default function BookingPage() {
   ];
 
   return (
-    <div className="bg-[#F8FAFC] py-8">
+    <div className="bg-secondary-bg py-8">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-[1fr_450px] gap-8">
           {/* Right Section - Car Details */}
           <main className="space-y-6">
-            <h1>تفاصيل السيارة</h1>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => window.history.back()}
+                className="cursor-pointer"
+              >
+                <ArrowRight className="size-8 text-secondary" />
+              </Button>
+
+              <h2 className="text-2xl md:text-4xl font-bold text-primary">
+                تويوتا كامري 2023
+              </h2>
+            </div>
             {/* Car Image Carousel */}
             <Carousel
               opts={{
@@ -117,34 +131,44 @@ export default function BookingPage() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="translate-y-0 bg-white border-gray-200 hover:bg-gray-100 absolute top-1/2 right-4 left-auto" />
-              <CarouselNext className="translate-y-0 bg-white border-gray-200 hover:bg-gray-100 absolute top-1/2 left-4 right-auto" />
+              <CarouselPrevious className="translate-y-0 opacity-60 bg-white border-gray-200 hover:opacity-100 absolute top-1/2 right-4 left-auto" />
+              <CarouselNext className="translate-y-0 opacity-60 bg-white border-gray-200 hover:opacity-100 absolute top-1/2 left-4 right-auto" />
             </Carousel>
 
+            {/* driver info */}
+            <div className="flex items-center gap-3">
+              <Avatar className="w-12 h-12">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="text-base mb-2 text-primary font-semibold">
+                  محمود سمير العدوى
+                </p>
+                <p className="text-xs flex items-center gap-1">
+                  <Star className="h-4 w-4 fill-rating text-rating" />
+                  <span className="text-primary">5</span>
+                  <span className="text-primary">(5 تقييم)</span>
+                </p>
+              </div>
+            </div>
+
             {/* Car Specifications */}
-            <Card className="py-0">
+            <Card className="py-0 shadow-(--primary-shadow)">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-4">
+                <h3 className="text-2xl font-bold text-primary mb-8">
                   مواصفات السيارة
                 </h3>
-                <p className="text-lg font-semibold text-primary mb-6">
-                  تويوتا كامري 2023
-                </p>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {specifications.map((spec, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center justify-center p-4 bg-card-custom-background rounded-lg"
+                      className="flex flex-col items-center justify-center p-4 bg-secondary-bg rounded-2xl"
                     >
-                      <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full mb-2 shadow-sm">
-                        <spec.icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <p className="text-sm text-gray-600 mb-1">{spec.label}</p>
-                      <p className="text-base font-bold text-primary flex items-center gap-1">
-                        {spec.label === "التقييم" && (
-                          <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                        )}
+                      <spec.icon className="size-8 text-[#1E40AF] mb-2" />
+                      <p className="text-sm text-gray-500 mb-1">{spec.label}</p>
+                      <p className="text-base font-bold text-primary">
                         {spec.value}
                       </p>
                     </div>
@@ -154,74 +178,24 @@ export default function BookingPage() {
             </Card>
 
             {/* Features */}
-            <Card>
+            <Card className="py-0 shadow-(--primary-shadow)">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-4">
+                <h3 className="text-2xl font-bold text-primary mb-8">
                   المميزات
                 </h3>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <div className="w-5 h-5 flex items-center justify-center bg-green-500 rounded-full shrink-0">
-                        <Check className="w-3 h-3 text-white" />
-                      </div>
-                      <span className="text-sm text-gray-700">{feature}</span>
-                    </div>
+                    <FeatureItem key={index} text={feature} />
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            {/* Driver Information */}
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-4">
-                  معلومات السائق
-                </h3>
-
-                <div className="flex items-center gap-4 mb-4">
-                  <Avatar className="w-16 h-16">
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                    <AvatarFallback>سج</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <p className="text-lg font-semibold text-primary">
-                        سارة الجهيمي
-                      </p>
-                      <Badge
-                        variant="secondary"
-                        className="bg-blue-100 text-secondary border-none"
-                      >
-                        <BadgeCheck className="w-3 h-3" />
-                        موثوق
-                      </Badge>
-                    </div>
-                    <p className="text-sm text-gray-600">سائق محترف</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3">
-                  <Button
-                    variant="outline"
-                    className="flex-1 border-gray-300 rounded-lg"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    اسأل سؤال
-                  </Button>
-                  <Button className="flex-1 bg-secondary hover:bg-secondary/90 text-white rounded-lg">
-                    <Phone className="w-4 h-4" />
-                    اتصل بالسائق
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
             {/* Reviews */}
-            <Card>
+            <Card className="py-0 shadow-(--primary-shadow)">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-4">
+                <h3 className="text-2xl font-bold text-primary mb-8">
                   التقييمات (40)
                 </h3>
 
@@ -238,39 +212,34 @@ export default function BookingPage() {
                         </Avatar>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <p className="font-semibold text-primary">
+                            <p className="font-bold text-base text-primary">
                               {review.name}
                             </p>
-                            {review.verified && (
-                              <Badge
-                                variant="secondary"
-                                className="bg-blue-100 text-secondary border-none"
-                              >
-                                <BadgeCheck className="w-3 h-3" />
-                                موثوق
-                              </Badge>
-                            )}
                           </div>
 
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="flex gap-0.5">
-                              {[...Array(review.rating)].map((_, i) => (
-                                <Star
-                                  key={i}
-                                  className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                                />
-                              ))}
-                            </div>
-                            <span className="text-xs text-gray-500">
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-xs text-primary font-semibold">
+                              السعوديه
+                            </span>
+                            <span className="text-sm text-gray-500 font-semibold">
                               {review.date}
                             </span>
                           </div>
-
-                          <p className="text-sm text-gray-700 leading-relaxed">
-                            {review.comment}
-                          </p>
                         </div>
                       </div>
+
+                      <div className="flex  gap-0.5 my-4">
+                        {[...Array(review.rating)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="size-4 fill-rating text-rating"
+                          />
+                        ))}
+                      </div>
+
+                      <p className="text-base text-gray-700 leading-relaxed">
+                        {review.comment}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -278,22 +247,21 @@ export default function BookingPage() {
             </Card>
           </main>
           {/* Left Sidebar - Booking Form */}
-          <Card className="sticky top-4 p-10">
+          <Card className="sticky top-4 p-10 shadow-(--primary-shadow)">
             <CardContent className="p-0">
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">
                 احجز الآن
               </h2>
               <p className="text-sm md:text-base text-gray-500 mb-4">
-                سيارات احترافية متاحة للإيجار 24/7 وبأسعار تنافسية
-                <br />
-                لتجربة سفر مميزة
+                يُفضل التسجيل في المنصة لسهولة متابعة حالة رحلتك ومعرفة جميع
+                تفاصيل الحجز.
               </p>
 
               <form className="space-y-4">
                 {/* From Where */}
                 <div className="space-y-2">
                   <label>
-                    من أين <span className="text-red-500">*</span>
+                    مكان الإستلام<span className="text-red-500">*</span>
                   </label>
                   <Select>
                     <SelectTrigger>
@@ -313,9 +281,9 @@ export default function BookingPage() {
                 {/* Pickup Location */}
                 <div className="space-y-2">
                   <label>
-                    سيتم الاستلام <span className="text-red-500">*</span>
+                    رقم الهاتف<span className="text-red-500">*</span>
                   </label>
-                  <Input type="text" placeholder="" />
+                  <Input type="number" placeholder="" />
                 </div>
 
                 {/* Phone Number */}
@@ -330,17 +298,6 @@ export default function BookingPage() {
                 <div className="space-y-2">
                   <label>
                     تاريخ البدء <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative">
-                    <Input type="text" placeholder="اختر التاريخ" />
-                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
-                  </div>
-                </div>
-
-                {/* End Date */}
-                <div className="space-y-2">
-                  <label>
-                    تاريخ النهاية <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <Input type="text" placeholder="اختر التاريخ" />

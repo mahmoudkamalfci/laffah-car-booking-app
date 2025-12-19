@@ -17,7 +17,7 @@ const carListings: CarListing[] = [
     carName: "سيارة فاخرة",
     year: 2023,
     city: "القاهرة",
-    availability: "5 دقائق",
+    availability: "4 مقاعد",
     trips: 1350,
     pricePerDay: 800,
     pricePerHour: 100,
@@ -33,7 +33,7 @@ const carListings: CarListing[] = [
     carName: "تويوتا كامري",
     year: 2023,
     city: "القاهرة",
-    availability: "5 دقائق",
+    availability: "4 مقاعد",
     trips: 1350,
     pricePerDay: 1350,
     pricePerHour: 100,
@@ -49,7 +49,7 @@ const carListings: CarListing[] = [
     carName: "سيارة رياضية",
     year: 2023,
     city: "القاهرة",
-    availability: "5 دقائق",
+    availability: "4 مقاعد",
     trips: 1200,
     pricePerDay: 1200,
     pricePerHour: 100,
@@ -71,7 +71,6 @@ export default function FleetSection() {
           </p>
         </div>
 
-        {/* الـ Carousel الرئيسي - نفس الحل */}
         <div>
           <Carousel
             opts={{
