@@ -202,7 +202,7 @@ function PriceCard({ car }: { car: CarListing }) {
 
 export function FleetCard({ car }: { car: CarListing }) {
   return (
-    <div className="flex flex-col lg:flex-row gap-4 shadow-(--shadow-navbar)">
+    <div className="flex flex-col lg:flex-row gap-4 shadow-(--primary-shadow)">
       <div className="flex-1 w-full lg:w-auto">
         <CarCard car={car} />
       </div>
