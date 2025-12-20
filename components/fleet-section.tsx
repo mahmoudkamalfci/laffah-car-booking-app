@@ -1,6 +1,3 @@
-// components/FleetSection.tsx
-"use client";
-
 import {
   Carousel,
   CarouselContent,

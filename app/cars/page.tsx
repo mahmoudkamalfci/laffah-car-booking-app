@@ -1,5 +1,3 @@
-"use client";
-
 import { FiltersSidebar } from "@/components/filters-sidebar";
 import { FleetCard, CarListing } from "@/components/fleet-card";
 
