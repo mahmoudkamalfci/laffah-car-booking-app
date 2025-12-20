@@ -90,16 +90,6 @@ export default function CarsPage() {
 
           {/* Main Content */}
           <main className="w-full lg:w-3/4">
-            <div className="flex items-center justify-between mb-6">
-              <p className="text-gray-500">
-                تم العثور على
-                <span className="font-bold text-primary">
-                  {DEMO_CARS.length}
-                </span>
-                سيارة
-              </p>
-            </div>
-
             <div className="space-y-6">
               {DEMO_CARS.map((car) => (
                 <FleetCard key={car.id} car={car} />

@@ -1,21 +1,5 @@
-import Image from "next/image";
 import { FeatureCard } from "@/components/feature-card";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { PersonalInfoCard } from "@/components/join/personal-info-card";
 
 const features = [
   {
@@ -61,56 +45,7 @@ export default function JoinPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-7">
-            <Card className="p-6 gap-4 shadow-(--primary-shadow)">
-              <CardHeader className="px-0 pt-0">
-                <CardTitle className="text-2xl font-bold text-primary ">
-                  البيانات الشخصية
-                </CardTitle>
-                <CardDescription className="text-gray-500  text-base">
-                  كن جزءاً من أكبر شبكة لتأجير السيارات مع السائقين في مصر
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="px-0 space-y-4">
-                <div className="space-y-2">
-                  <label htmlFor="fullName">الاسم بالكامل</label>
-                  <Input id="fullName" placeholder="ادخل اسمك" />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="phone">رقم الهاتف</label>
-                  <Input id="phone" placeholder="ادخل رقم الهاتف" />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="email">البريد الإلكتروني</label>
-                  <Input id="email" placeholder="ادخل البريد الإلكتروني" />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="city">المدينة</label>
-                  <Select dir="rtl">
-                    <SelectTrigger className="w-full bg-secondary-bg border border-border h-10 rounded-md">
-                      <SelectValue placeholder="القاهرة" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="cairo">القاهرة</SelectItem>
-                      <SelectItem value="giza">الجيزة</SelectItem>
-                      <SelectItem value="alex">الإسكندرية</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="idNumber">رقم البطاقة الشخصية</label>
-                  <Input id="idNumber" placeholder="ادخل رقم البطاقة" />
-                </div>
-                <div className="flex justify-end">
-                  <Button className="min-w-[160px]" size="lg" disabled>
-                    التالي
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <PersonalInfoCard />
           </div>
 
           {/* Feature Cards Section - Left Side (Second in RTL) */}
@@ -126,6 +61,13 @@ export default function JoinPage() {
               />
             ))}
           </div>
+        </div>
+
+        <div className="py-8">
+          <p className="text-center text-primary text-base max-w-[600px] mx-auto">
+            سيتم مراجعة طلبك من قبل فريقنا خلال 24-48 ساعة. في حالة القبول،
+            سنتواصل معك لإكمال إجراءات التسجيل وتفعيل حسابك على المنصة.
+          </p>
         </div>
       </div>
     </div>
