@@ -4,7 +4,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -16,6 +16,14 @@ import {
 import AuthDialog from "@/components/auth-dialog";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
@@ -28,6 +36,13 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthDialogOpen, setIsAuthDialogOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+
+  // Mock User State
+  const isLoggedIn = true;
+  const user = {
+    name: "مروان",
+    phone: "01012345678",
+  };
   const lastScrollY = useRef(0);
   const pathname = usePathname();
 
@@ -94,15 +109,63 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Auth Button - Desktop */}
+          {/* Auth Button / Profile Menu - Desktop */}
           <div className="hidden md:block">
-            <Button
-              variant="default"
-              size="lg"
-              onClick={() => setIsAuthDialogOpen(true)}
-            >
-              تسجيل الدخول / إنشاء حساب
-            </Button>
+            {isLoggedIn ? (
+              <DropdownMenu dir="rtl">
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="flex items-center gap-2 hover:bg-transparent px-2 h-auto"
+                  >
+                    <Avatar className="size-10">
+                      <AvatarFallback className="bg-secondary text-secondary-foreground text-lg">
+                        {user.name[0]}
+                      </AvatarFallback>
+                    </Avatar>
+                    <span className="font-medium text-primary text-base">
+                      {user.name}
+                    </span>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-60 p-6" align="start">
+                  <div className="flex items-center gap-3">
+                    <Avatar className="size-10">
+                      <AvatarFallback className="bg-secondary text-secondary-foreground text-lg">
+                        {user.name[0]}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col gap-1">
+                      <span className="font-bold text-base text-primary">
+                        {user.name}
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        {user.phone}
+                      </span>
+                    </div>
+                  </div>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="cursor-pointer py-3">
+                    إعدادات الحساب
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer py-3">
+                    حجوزاتى
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer py-3 text-red-500 focus:text-red-500">
+                    تسجيل الخروج
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Button
+                variant="default"
+                size="lg"
+                onClick={() => setIsAuthDialogOpen(true)}
+              >
+                تسجيل الدخول / إنشاء حساب
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu */}
