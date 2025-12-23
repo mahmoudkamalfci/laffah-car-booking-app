@@ -66,7 +66,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-12">
             {/* Logo */}
-            <Link href="/" className="text-primary text-4xl font-bold">
+            <Link href="/">
               <Image
                 src="/Laffah-Logo.png"
                 alt="Logo"

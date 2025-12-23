@@ -1,5 +1,6 @@
 import { FiltersSidebar } from "@/components/filters-sidebar";
 import { FleetCard, CarListing } from "@/components/fleet-card";
+import { Suspense } from "react";
 
 const DEMO_CARS: CarListing[] = [
   {
@@ -85,7 +86,9 @@ export default function CarsPage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar */}
           <aside className="w-full lg:w-1/4">
-            <FiltersSidebar />
+            <Suspense fallback={<div>Loading filters...</div>}>
+              <FiltersSidebar />
+            </Suspense>
           </aside>
 
           {/* Main Content */}

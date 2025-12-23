@@ -2,26 +2,26 @@ import { FeatureCard } from "@/components/feature-card";
 
 const features = [
   {
-    icon: "/icons/price-competitive.png",
+    image: "/icons/price-competitive.png",
     title: "أسعار تنافسية",
     description: "سيارات حديثة ونظيفة مع أفضل السائقين",
     iconBg: "bg-blue-50",
   },
   {
-    icon: "/icons/quality.png",
+    image: "/icons/quality.png",
     title: "جودة عالية",
     description: "سيارات حديثة ونظيفة مع أفضل السائقين",
     iconBg: "bg-blue-50",
     badge: "1",
   },
   {
-    icon: "/icons/security.png",
+    image: "/icons/security.png",
     title: "أمان وثقة",
     description: "سيارات حديثة ونظيفة مع أفضل السائقين",
     iconBg: "bg-blue-50",
   },
   {
-    icon: "/icons/24-hours.png",
+    image: "/icons/24-hours.png",
     title: "خدمة 24 ساعة",
     description: "سيارات حديثة ونظيفة مع أفضل السائقين",
     iconBg: "bg-blue-50",
@@ -43,7 +43,7 @@ export function WhyChooseUs() {
           {features.reverse().map((feature, index) => (
             <FeatureCard
               key={index}
-              icon={feature.icon}
+              image={feature.image}
               title={feature.title}
               description={feature.description}
               iconBg={feature.iconBg}

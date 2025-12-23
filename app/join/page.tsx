@@ -53,7 +53,7 @@ export default function JoinPage() {
             {features.map((feature, index) => (
               <FeatureCard
                 key={index}
-                icon={feature.icon}
+                image={feature.icon}
                 title={feature.title}
                 description={feature.description}
                 iconBg={feature.iconBg}
