@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -14,7 +12,7 @@ import {
 export default function ProfilePage() {
   return (
     <div className="bg-secondary-bg">
-      <div className="container mx-auto py-6 flex flex-col items-center min-h-[calc(100vh-88px)] gap-8">
+      <div className="container mx-auto py-8 flex flex-col items-center min-h-[calc(100vh-88px)] gap-8">
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-bold text-primary">الملف الشخصي</h1>
           <p className="text-muted-foreground text-xl">
@@ -22,7 +20,7 @@ export default function ProfilePage() {
           </p>
         </div>
 
-        <Card className="p-6 md:p-12 gap-4 shadow-(--primary-shadow) w-full max-w-2xl bg-white">
+        <Card className="p-6 md:p-12 gap-4 shadow-(--primary-shadow) w-full max-w-2xl bg-white rounded-2xl">
           <CardHeader className="px-0 pt-0 text-center">
             <CardTitle className="text-3xl font-bold text-primary text-center">
               بياناتك

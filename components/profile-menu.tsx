@@ -56,8 +56,8 @@ export default function ProfileMenu({ user }: ProfileMenuProps) {
         <DropdownMenuItem asChild className="cursor-pointer py-3">
           <Link href="/profile">إعدادات الحساب</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer py-3">
-          حجوزاتى
+        <DropdownMenuItem asChild className="cursor-pointer py-3">
+          <Link href="/profile/booking">حجوزاتى</Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer py-3 text-destructive focus:text-destructive">
           تسجيل الخروج

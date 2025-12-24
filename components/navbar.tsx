@@ -153,7 +153,7 @@ export default function Navbar() {
                         إعدادات الحساب
                       </Link>
                       <Link
-                        href="#"
+                        href="/profile/booking"
                         onClick={() => setIsOpen(false)}
                         className="text-primary hover:text-primary/80 transition-colors text-lg font-medium py-2 border-b border-border block"
                       >

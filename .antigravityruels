@@ -4,6 +4,9 @@
 - **Styling**: Always use [TailwindCSS](https://tailwindcss.com/) for styling.
 - **Components**: Always use [shadcn/ui](https://ui.shadcn.com/) components.
 
+## React Patterns
+- **Client Components**: Only use `"use client"` when it's important. Do not use it by default.
+
 ## Design System
 - **Globals**: Always check `app/globals.css` for design tokens and variables before creating new styles.
 
