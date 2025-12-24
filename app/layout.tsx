@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { Cairo } from "next/font/google";
-const cairo = Cairo({
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
+const ibm = IBM_Plex_Sans_Arabic({
   subsets: ["arabic", "latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body
-        className={`min-h-screen bg-background font-sans antialiased ${cairo.className}`}
+        className={`min-h-screen bg-background font-sans antialiased ${ibm.className}`}
       >
         <Navbar />
         <main className="pt-[88px]">{children}</main>

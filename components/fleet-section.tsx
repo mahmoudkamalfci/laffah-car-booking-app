@@ -71,7 +71,7 @@ export default function FleetSection() {
         <div>
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
               direction: "rtl",
             }}
