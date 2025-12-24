@@ -12,6 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FeatureItem } from "@/components/feature-item";
 import { BookingForm } from "@/components/booking-form";
 import { BackButton } from "@/components/back-button";
+import { DriverInfo } from "@/components/driver-info";
 
 export default function BookingPage() {
   // Demo data
@@ -108,22 +109,12 @@ export default function BookingPage() {
             </Carousel>
 
             {/* driver info */}
-            <div className="flex items-center gap-3">
-              <Avatar className="w-12 h-12">
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <div>
-                <p className="text-base mb-2 text-primary font-semibold">
-                  محمود سمير العدوى
-                </p>
-                <p className="text-xs flex items-center gap-1">
-                  <Star className="h-4 w-4 fill-rating text-rating" />
-                  <span className="text-primary">5</span>
-                  <span className="text-primary">(5 تقييم)</span>
-                </p>
-              </div>
-            </div>
+            <DriverInfo
+              name="محمود سمير العدوى"
+              avatar="https://github.com/shadcn.png"
+              rating={5}
+              reviewCount={5}
+            />
 
             {/* Car Specifications */}
             <Card className="py-0 shadow-(--primary-shadow)">

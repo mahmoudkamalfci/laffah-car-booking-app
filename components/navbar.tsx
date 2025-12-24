@@ -4,7 +4,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -16,14 +16,7 @@ import {
 import AuthDialog from "@/components/auth-dialog";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import ProfileMenu from "@/components/profile-menu";
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
@@ -112,51 +105,7 @@ export default function Navbar() {
           {/* Auth Button / Profile Menu - Desktop */}
           <div className="hidden md:block">
             {isLoggedIn ? (
-              <DropdownMenu dir="rtl">
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className="flex items-center gap-2 hover:bg-transparent px-2 h-auto"
-                  >
-                    <Avatar className="size-10">
-                      <AvatarFallback className="bg-secondary text-secondary-foreground text-lg">
-                        {user.name[0]}
-                      </AvatarFallback>
-                    </Avatar>
-                    <span className="font-medium text-primary text-base">
-                      {user.name}
-                    </span>
-                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-60 p-6" align="start">
-                  <div className="flex items-center gap-3">
-                    <Avatar className="size-10">
-                      <AvatarFallback className="bg-secondary text-secondary-foreground text-lg">
-                        {user.name[0]}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="flex flex-col gap-1">
-                      <span className="font-bold text-base text-primary">
-                        {user.name}
-                      </span>
-                      <span className="text-sm text-muted-foreground">
-                        {user.phone}
-                      </span>
-                    </div>
-                  </div>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem className="cursor-pointer py-3">
-                    إعدادات الحساب
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer py-3">
-                    حجوزاتى
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer py-3 text-red-500 focus:text-red-500">
-                    تسجيل الخروج
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <ProfileMenu user={user} />
             ) : (
               <Button
                 variant="default"
@@ -193,14 +142,40 @@ export default function Navbar() {
                       {link.label}
                     </Link>
                   ))}
-                  <Button
-                    onClick={() => {
-                      setIsOpen(false);
-                      setIsAuthDialogOpen(true);
-                    }}
-                  >
-                    تسجيل الدخول / إنشاء حساب
-                  </Button>
+
+                  {isLoggedIn ? (
+                    <>
+                      <Link
+                        href="/profile"
+                        onClick={() => setIsOpen(false)}
+                        className="text-primary hover:text-primary/80 transition-colors text-lg font-medium py-2 border-b border-border block"
+                      >
+                        إعدادات الحساب
+                      </Link>
+                      <Link
+                        href="#"
+                        onClick={() => setIsOpen(false)}
+                        className="text-primary hover:text-primary/80 transition-colors text-lg font-medium py-2 border-b border-border block"
+                      >
+                        حجوزاتى
+                      </Link>
+                      <button
+                        onClick={() => setIsOpen(false)}
+                        className="text-destructive hover:text-red-600 transition-colors text-lg font-medium py-2 border-b border-border block w-full text-right"
+                      >
+                        تسجيل الخروج
+                      </button>
+                    </>
+                  ) : (
+                    <Button
+                      onClick={() => {
+                        setIsOpen(false);
+                        setIsAuthDialogOpen(true);
+                      }}
+                    >
+                      تسجيل الدخول / إنشاء حساب
+                    </Button>
+                  )}
                 </div>
               </SheetContent>
             </Sheet>

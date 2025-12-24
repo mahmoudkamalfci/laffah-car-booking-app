@@ -82,7 +82,7 @@ export function PersonalInfoCard() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="model">
-                  الموديل <span className="text-red-500">*</span>
+                  الموديل <span className="text-destructive">*</span>
                 </label>
                 <Select dir="rtl">
                   <SelectTrigger>
@@ -113,7 +113,7 @@ export function PersonalInfoCard() {
 
               <div className="space-y-2">
                 <label htmlFor="carShape">
-                  شكل العربية <span className="text-red-500">*</span>
+                  شكل العربية <span className="text-destructive">*</span>
                 </label>
                 <Select dir="rtl">
                   <SelectTrigger>
@@ -144,7 +144,7 @@ export function PersonalInfoCard() {
 
               <div className="space-y-2">
                 <label htmlFor="seats">
-                  عدد المقاعد <span className="text-red-500">*</span>
+                  عدد المقاعد <span className="text-destructive">*</span>
                 </label>
                 <Input type="number" id="seats" placeholder="4" />
               </div>

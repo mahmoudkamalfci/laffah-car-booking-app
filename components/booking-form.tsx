@@ -26,7 +26,7 @@ export function BookingForm() {
           {/* From Where */}
           <div className="space-y-2">
             <label>
-              مكان الإستلام<span className="text-red-500">*</span>
+              مكان الإستلام<span className="text-destructive">*</span>
             </label>
             <Select>
               <SelectTrigger>
@@ -44,7 +44,7 @@ export function BookingForm() {
           {/* Pickup Location */}
           <div className="space-y-2">
             <label>
-              رقم الهاتف<span className="text-red-500">*</span>
+              رقم الهاتف<span className="text-destructive">*</span>
             </label>
             <Input type="number" placeholder="" />
           </div>
@@ -52,7 +52,7 @@ export function BookingForm() {
           {/* Phone Number */}
           <div className="space-y-2">
             <label>
-              رقم الهاتف <span className="text-red-500">*</span>
+              رقم الهاتف <span className="text-destructive">*</span>
             </label>
             <Input type="number" placeholder="ادخل رقم الهاتف" />
           </div>
@@ -60,7 +60,7 @@ export function BookingForm() {
           {/* Start Date */}
           <div className="space-y-2">
             <label>
-              تاريخ البدء <span className="text-red-500">*</span>
+              تاريخ البدء <span className="text-destructive">*</span>
             </label>
             <div className="relative">
               <Input type="text" placeholder="اختر التاريخ" />
@@ -71,7 +71,7 @@ export function BookingForm() {
           {/* Number of Days */}
           <div className="space-y-2">
             <label>
-              عدد الأيام <span className="text-red-500">*</span>
+              عدد الأيام <span className="text-destructive">*</span>
             </label>
             <Input type="number" defaultValue="1" min="1" />
           </div>

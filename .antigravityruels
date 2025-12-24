@@ -1,0 +1,11 @@
+# AI Agent Rules
+
+## Tech Stack
+- **Styling**: Always use [TailwindCSS](https://tailwindcss.com/) for styling.
+- **Components**: Always use [shadcn/ui](https://ui.shadcn.com/) components.
+
+## Design System
+- **Globals**: Always check `app/globals.css` for design tokens and variables before creating new styles.
+
+## Package Management
+- **Manager**: Always use `pnpm` as the package manager.

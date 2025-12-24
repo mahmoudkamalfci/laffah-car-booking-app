@@ -129,7 +129,7 @@ export function FiltersSidebar() {
           <Button
             variant="ghost"
             size="sm"
-            className="text-red-500 hover:text-red-600 hover:bg-red-50 px-2"
+            className="text-destructive hover:text-red-600 hover:bg-red-50 px-2"
             onClick={clearAllFilters}
           >
             مسح الكل

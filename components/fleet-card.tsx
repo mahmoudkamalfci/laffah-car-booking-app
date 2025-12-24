@@ -18,6 +18,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { DriverInfo } from "./driver-info";
 
 export interface CarListing {
   id: number;
@@ -66,22 +67,13 @@ function CarCard({ car }: { car: CarListing }) {
         <CarouselPrevious className="translate-y-0 bg-white border-gray-200 hover:bg-gray-100 absolute top-1/2 right-4 left-auto" />
         <CarouselNext className="translate-y-0 bg-white border-gray-200 hover:bg-gray-100 absolute top-1/2 left-4 right-auto" />
       </Carousel>
-      <div className="flex items-center gap-3">
-        <Avatar className="w-12 h-12">
-          <AvatarImage src="https://github.com/shadcn.png" />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-        <div>
-          <p className="text-base mb-2 text-primary font-semibold">
-            {car.carName}
-          </p>
-          <p className="text-xs flex items-center gap-1">
-            <Star className="h-4 w-4 fill-rating text-rating" />
-            <span className="text-primary">{car.ownerRating}</span>
-            <span className="text-primary">({car.ownerReviews} تقييم)</span>
-          </p>
-        </div>
-      </div>
+      {/* driver info */}
+      <DriverInfo
+        name="محمود سمير العدوى"
+        avatar="https://github.com/shadcn.png"
+        rating={5}
+        reviewCount={5}
+      />
     </div>
   );
 }
